@@ -1,23 +1,19 @@
 """
-Module cấu hình cho ứng dụng trích xuất dữ liệu GitLab API.
+Configuration module for the GitLab API data extraction application.
 
-Module này tải các biến môi trường và cung cấp cài đặt cấu hình
-cho ứng dụng.
+Instead of retrieving the token from an environment variable, 
+the application prompts the user to enter the token at runtime (without hardcoding it).
 """
 
-import os
-from dotenv import load_dotenv
 
-# Tải biến môi trường từ file .env
-load_dotenv()
+import getpass
 
-# Cấu hình GitLab API
-GITLAB_API_URL = os.getenv("GITLAB_API_URL", "https://gitlab.boon.com.au/api/v4")
-GITLAB_PRIVATE_TOKEN = os.getenv("GITLAB_PRIVATE_TOKEN", "personalY5x4w3Cme8yqUjMoxmyi")
+GITLAB_API_URL = "https://gitlab.boon.com.au/api/v4"
 
-# Cấu hình cơ sở dữ liệu
-DATABASE_URI = os.getenv("DATABASE_URI", "sqlite:///gitlab_data.db")
+token = getpass.getpass("Private Token: ")
+GITLAB_PRIVATE_TOKEN = token
 
-# Cấu hình logging
-LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+DATABASE_URI = "sqlite:///gitlab_data.db"
+
+LOG_LEVEL = "INFO"
 LOG_DIR = "logs"

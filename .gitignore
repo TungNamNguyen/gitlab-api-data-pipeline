@@ -1,4 +1,3 @@
-# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -19,23 +18,13 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
-
-# Môi trường ảo
 venv/
 ENV/
-
-# Logs
 logs/
 *.log
-
-# Cơ sở dữ liệu
 *.db
 *.sqlite3
-
-# Biến môi trường
 .env
-
-# IDE
 .idea/
 .vscode/
 *.swp

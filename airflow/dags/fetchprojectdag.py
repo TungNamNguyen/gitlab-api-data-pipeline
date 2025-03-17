@@ -32,5 +32,5 @@ with DAG(
         python_callable=fetch_and_store_projects
     )
 
-  
+
     fetch_projects_task

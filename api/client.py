@@ -46,7 +46,7 @@ class GitLabApiClient:
             logger.info(f"Fetching projects from {url}")
             
             response = requests.get(url, headers=self.headers, params=params)
-            response.raise_for_status()  # Raise exception for non-2xx responses
+            response.raise_for_status()  
             
             projects = response.json()
             logger.info(f"Retrieved {len(projects)} projects from GitLab API")
