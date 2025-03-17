@@ -2,20 +2,20 @@
 A command-line application that extracts GitLab project information via the GitLab API and stores it in a database.
 
 # Features
--Connect to GitLab API using Python
--Store project data in a SQL database using -SQLAlchemy
--Perform CRUD operations on project data
--Implement proper error handling and logging
--Use OpenAPI-generated clients for API communication
--Store API credentials securely
+- Connect to GitLab API using Python
+- Store project data in a SQL database using -SQLAlchemy
+- Perform CRUD operations on project data
+- Implement proper error handling and logging
+- Use OpenAPI-generated clients for API communication
+- Store API credentials securely
 # Requirements
--Python 3.8+
--SQLAlchemy
--Requests
--Python-dotenv
--PyJWT
--Cryptography
--Pydantic
+- Python 3.8+
+- SQLAlchemy
+- Requests
+- Python-dotenv
+- PyJWT
+- Cryptography
+- Pydantic
 # Installation
 1. Clone this repository:
 git clone <repository-url>
@@ -29,10 +29,10 @@ pip install -r requirements.txt
 cp .env.example .env
 Edit .env with your GitLab API token and other settings
 # Configuration
-GITLAB_API_URL=https://gitlab.com/api/v4
-GITLAB_API_TOKEN=your_private_token
-DATABASE_URI=sqlite:///gitlab_data.db
-LOG_LEVEL=INFO
+- GITLAB_API_URL=https://gitlab.com/api/v4
+- GITLAB_API_TOKEN=your_private_token
+- DATABASE_URI=sqlite:///gitlab_data.db
+- LOG_LEVEL=INFO
 # Usage
 1. Fetching Projects
 python app.py fetch
@@ -56,18 +56,18 @@ python app.py -h
 The application uses SQLite with the following schema:
 
 Projects Table
-id: Integer, Primary Key
-name: String, Not Null
-description: Text
-created_at: DateTime
-updated_at: DateTime
-web_url: String
-visibility: String
+- id: Integer, Primary Key
+- name: String, Not Null
+- description: Text
+- created_at: DateTime
+- updated_at: DateTime
+- web_url: String
+- visibility: String
 Namespaces Table
-id: Integer, Primary Key
-name: String, Not Null
-path: String, Not Null
-project_id: Integer, Foreign Key to Projects
+- id: Integer, Primary Key
+- name: String, Not Null
+- path: String, Not Null
+- project_id: Integer, Foreign Key to Projects
 
 # OpenAPI Integration
 npm install @openapitools/openapi-generator-cli -g
@@ -76,17 +76,17 @@ openapi-generator-cli generate -i https://gitlab.com/gitlab-org/gitlab/-/blob/ma
 # Logging
 The application implements comprehensive logging with:
 
-Configurable log levels
-File and console logging
-Log rotation with timestamps
-Structured log format
+- Configurable log levels
+- File and console logging
+- Log rotation with timestamps
+- Structured log format
 
 # Security Features
-API tokens stored in environment variables
-Parameterized database queries
-Input validation
-Secure error handling
-Connection pooling with validation
+- API tokens stored in environment variables
+- Parameterized database queries
+- Input validation
+- Secure error handling
+- Connection pooling with validation
 
 # Dependencies
 SQLAlchemy==1.4.49 
